@@ -16,6 +16,7 @@
 |   $URL$
 +------------------------------------------------
 */
+ob_start();
 require_once "include/bittorrent.php";
 require_once "include/user_functions.php";
 
@@ -73,7 +74,8 @@ loggedinorreturn();
   header("Content-Type: application/x-bittorrent");
 
 
-
+  ob_end_flush();
+  ob_end_clean();
   print(benc($dict));
 
 

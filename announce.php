@@ -6,6 +6,9 @@
 |   by CoLdFuSiOn
 |   (c) 2003 - 2009 TBDev.Net
 |   http://www.tbdev.net
+|   by [Hect0r]
+ *  (c) 2019 TBDev.info
+|   http://tbdev.info/ 
 |   =============================================
 |   svn: http://sourceforge.net/projects/tbdevnet/
 |   Licence Info: GPL
@@ -16,6 +19,8 @@
 |   $URL$
 +------------------------------------------------
 */error_reporting(0);
+ob_start();
+require_once('include/mysql.php');
 ////////////////// GLOBAL VARIABLES ////////////////////////////	
 $TBDEV['baseurl'] = 'http://localhost/TB_ALPHA/';
 $TBDEV['announce_interval'] = 60 * 30;
@@ -35,10 +40,10 @@ $agent = $_SERVER["HTTP_USER_AGENT"];
 
 // Deny access made with a browser...
 if (
-    ereg("^Mozilla\\/", $agent) || 
-    ereg("^Opera\\/", $agent) || 
-    ereg("^Links ", $agent) || 
-    ereg("^Lynx\\/", $agent) || 
+    !is_bool(strpos("Mozilla", $agent)) || 
+    !is_bool(strpos("Opera", $agent)) || 
+    !is_bool(strpos("Links", $agent)) || 
+    !is_bool(strpos("Lynx", $agent)) || 
     isset($_SERVER['HTTP_COOKIE']) || 
     isset($_SERVER['HTTP_ACCEPT_LANGUAGE']) || 
     isset($_SERVER['HTTP_ACCEPT_CHARSET'])
@@ -50,11 +55,10 @@ function dbconn()
 {
     global $TBDEV;
 
-    if (!@mysql_connect($TBDEV['mysql_host'], $TBDEV['mysql_user'], $TBDEV['mysql_pass']))
+    if (!($TBDEV['DB'] = mysql_connect($TBDEV['mysql_host'], $TBDEV['mysql_user'], $TBDEV['mysql_pass'], $TBDEV['mysql_db'], 3306)))
     {
 	  err('Please call back later');
     }
-    mysql_select_db($TBDEV['mysql_db']) or err('Please call back later');
 }
 
 function err($msg)
@@ -74,6 +78,8 @@ function benc_resp_raw($x)
     header( "Content-Type: text/plain" );
     header( "Pragma: no-cache" );
 
+    ob_end_flush();
+    ob_end_clean();
     if ( $_SERVER['HTTP_ACCEPT_ENCODING'] == 'gzip' )
     {
         header( "Content-Encoding: gzip" );
@@ -164,12 +170,10 @@ function portblacklisted($port)
 }
 /////////////////////// FUNCTION DEFS END ///////////////////////////////
 
-$parts = array();
-$pattern = '[0-9a-fA-F]{32}';
-if( !isset($_GET['passkey']) OR !ereg($pattern, $_GET['passkey'], $parts) ) 
+if( !isset($_GET['passkey']) ) 
 		err("Invalid Passkey");
 	else
-		$GLOBALS['passkey'] = $parts[0];
+		$GLOBALS['passkey'] = $_GET['passkey'];
 		
 foreach (array("info_hash","peer_id","event","ip","localip") as $x) 
 {

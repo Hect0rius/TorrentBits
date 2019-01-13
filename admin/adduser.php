@@ -5,7 +5,9 @@
 |   =============================================
 |   by CoLdFuSiOn
 |   (c) 2003 - 2009 TBDev.Net
-|   http://www.tbdev.net
+|   by [Hect0r]
+|  (c) 2019 TBDev.Info
+|   http://tbdev.info/
 |   =============================================
 |   svn: http://sourceforge.net/projects/tbdevnet/
 |   Licence Info: GPL

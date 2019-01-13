@@ -17,6 +17,7 @@
 +------------------------------------------------
 */
 require_once("include/config.php");
+require_once("include/mysql.php");
 require_once("cleanup.php");
 
 
@@ -78,7 +79,7 @@ function dbconn($autoclean = false)
 {
     global $TBDEV;
 
-    if (!@mysql_connect($TBDEV['mysql_host'], $TBDEV['mysql_user'], $TBDEV['mysql_pass']))
+    if (!is_object($TBDEV['DB'] = mysql_connect($TBDEV['mysql_host'], $TBDEV['mysql_user'], $TBDEV['mysql_pass'], $TBDEV['mysql_db'], 3306)))
     {
 	  switch (mysql_errno())
 	  {
@@ -92,9 +93,6 @@ function dbconn($autoclean = false)
     	    die("[" . mysql_errno() . "] dbconn: mysql_connect: " . mysql_error());
       }
     }
-    mysql_select_db($TBDEV['mysql_db'])
-        or die('dbconn: mysql_select_db: ' . mysql_error());
-    //mysql_query("SET NAMES utf8");
     mysql_set_charset('utf8');
     
     userlogin();
@@ -282,13 +280,10 @@ function stdhead( $title = "", $js='', $css='' ) {
       $unread = $arr[0];
     }
   */
-    $htmlout = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"
-		\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
-		
-		<html xmlns='http://www.w3.org/1999/xhtml'>
+    $htmlout = "<!DOCTYPE html>
 		<head>
 
-			<meta name='generator' content='TBDev.net' />
+			<meta name='generator' content='TBDev.Info' />
 			<meta http-equiv='Content-Language' content='en-us' />
 			<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 			
@@ -305,9 +300,7 @@ function stdhead( $title = "", $js='', $css='' ) {
 
       <td class='clear'>
       <div id='logostrip'>
-      <img src='{$TBDEV['pic_base_url']}logo.jpg' alt='' />
-
-      <a href='donate.php'><img src='{$TBDEV['pic_base_url']}x-click-but04.gif' border='0' alt='{$lang['gl_donate']}' title='{$lang['gl_donate']}' style='margin-top: 5px' /></a>
+      <img src='{$TBDEV['pic_base_url']}logo.gif' alt='' />
       </div>
       </td>
 
@@ -337,6 +330,7 @@ function stdhead( $title = "", $js='', $css='' ) {
       <a href='faq.php'>{$lang['gl_faq']}</a>
       <a href='links.php'>{$lang['gl_links']}</a>
       <a href='staff.php'>{$lang['gl_staff']}</a>
+      <a href='donate.php'>{$lang['gl_donate']}</a>
       </div>
       <div class='tb-top-right-link'>";
 
@@ -380,7 +374,7 @@ function stdfoot() {
   global $TBDEV;
   
     return "<p align='center'>Remember, if you see any specific instance of this software running publicly, it's within your rights under gpl to garner a copy of that derivative from the person responsible for that webserver.<br />
-    <a href='http://www.tbdev.net'><img src='{$TBDEV['pic_base_url']}tbdev_btn_red.png' border='0' alt='Powered By TBDev &copy;2010' title='Powered By TBDev &copy;2010' /></a></p>
+    <a href='http://tbdev.info'><img src='{$TBDEV['pic_base_url']}tbdev_btn_red.png' border='0' alt='Powered By TBDev &copy;2019' title='Powered By TBDev &copy;2019' /></a></p>
     </td></tr></table>\n
     </body></html>\n";
 }

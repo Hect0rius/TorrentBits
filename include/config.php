@@ -5,7 +5,9 @@
 |   =============================================
 |   by CoLdFuSiOn
 |   (c) 2003 - 2009 TBDev.Net
-|   http://www.tbdev.net
+ *  by [Hect0r]
+ *  (c) 2019 TBDev.Info
+|   http://tbdev.info/
 |   =============================================
 |   svn: http://sourceforge.net/projects/tbdevnet/
 |   Licence Info: GPL
@@ -42,8 +44,8 @@ $TBDEV['time_date'] = '';
 // FYNNON FUCKWIT FRENCH RETARD
 $TBDEV['mysql_host'] = "localhost";
 $TBDEV['mysql_user'] = "root";
-$TBDEV['mysql_pass'] = "blank";
-$TBDEV['mysql_db']   = "test";
+$TBDEV['mysql_pass'] = "";
+$TBDEV['mysql_db']   = "TBDev";
 
 // Cookie setup
 $TBDEV['cookie_prefix']  = 'tbalpha_'; // This allows you to have multiple trackers, eg for demos, testing etc.
@@ -78,14 +80,14 @@ $TBDEV['torrent_dir'] = ROOT_PATH . '/torrents'; # must be writable for httpd us
 
 # the first one will be displayed on the pages
 $TBDEV['announce_urls'] = array();
-$TBDEV['announce_urls'][] = "http://localhost/TB_ALPHA/announce.php";
+$TBDEV['announce_urls'][] = "http://tbdev.info/announce.php";
 //$TBDEV['announce_urls'] = "http://localhost:2710/announce";
 //$TBDEV['announce_urls'] = "http://domain.com:83/announce.php";
 
 if ($_SERVER["HTTP_HOST"] == "")
   $_SERVER["HTTP_HOST"] = $_SERVER["SERVER_NAME"];
   
-$TBDEV['baseurl'] = "http://" . $_SERVER["HTTP_HOST"]."/tb_new";
+$TBDEV['baseurl'] = "http://" . $_SERVER["HTTP_HOST"];
 
 /*
 ## DO NOT UNCOMMENT THIS: IT'S FOR LATER USE!
@@ -109,7 +111,7 @@ $script = str_replace( "\\", "/", $script );
 //$TBDEV['peerlimit'] = 50000; //deprecated. no longer used.
 
 // Email for sender/return path.
-$TBDEV['site_email'] = "coldfusion@localhost";
+$TBDEV['site_email'] = "sysop@tbdev.info";
 
 $TBDEV['site_name'] = "TBDEV.NET";
 
@@ -143,6 +145,6 @@ define ('UC_SYSOP', 6);
 
 //Do not modify -- versioning system
 //This will help identify code for support issues at tbdev.net
-define ('TBVERSION','TBDev_2009_svn');
+define ('TBVERSION','TBDev_2019_svn');
 
 ?>
