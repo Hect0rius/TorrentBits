@@ -44,7 +44,7 @@ $TBDEV['time_date'] = '';
 // FYNNON FUCKWIT FRENCH RETARD
 $TBDEV['mysql_host'] = "localhost";
 $TBDEV['mysql_user'] = "root";
-$TBDEV['mysql_pass'] = "";
+$TBDEV['mysql_pass'] = "blank";
 $TBDEV['mysql_db']   = "TBDev";
 
 // Cookie setup
@@ -113,7 +113,7 @@ $script = str_replace( "\\", "/", $script );
 // Email for sender/return path.
 $TBDEV['site_email'] = "sysop@tbdev.info";
 
-$TBDEV['site_name'] = "TBDEV.NET";
+$TBDEV['site_name'] = "TBDEV.Info";
 
 $TBDEV['language'] = 'en';
 //charset

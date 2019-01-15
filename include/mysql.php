@@ -1,7 +1,7 @@
 <?php
 
 function mysql_connect($host, $user, $password, $database, $port) {
-    $DB = mysqli_connect($host, $user, $password, $database, $port, $socket);
+    $DB = mysqli_connect($host, $user, $password, $database, $port);
     
     if(!is_object($DB)) { 
         die("Could not connect to the database.");
@@ -40,4 +40,8 @@ function mysql_affected_rows() {
 }
 function mysql_num_rows($Res) {
     return mysqli_num_rows($Res);
+}
+function mysql_insert_id() {
+    global $TBDEV;
+    return mysqli_insert_id($TBDEV['DB']);
 }

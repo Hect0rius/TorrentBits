@@ -31,7 +31,7 @@ define ('UC_VIP', 2);
 $TBDEV['mysql_host'] = "localhost";
 $TBDEV['mysql_user'] = "root";
 $TBDEV['mysql_pass'] = "blank";
-$TBDEV['mysql_db']   = "tb";
+$TBDEV['mysql_db']   = "TBDev";
 ////////////////// GLOBAL VARIABLES ////////////////////////////
 
 // DO NOT EDIT BELOW UNLESS YOU KNOW WHAT YOU'RE DOING!!
@@ -54,8 +54,8 @@ if (
 function dbconn()
 {
     global $TBDEV;
-
-    if (!($TBDEV['DB'] = mysql_connect($TBDEV['mysql_host'], $TBDEV['mysql_user'], $TBDEV['mysql_pass'], $TBDEV['mysql_db'], 3306)))
+    $TBDEV['DB'] = mysql_connect($TBDEV['mysql_host'], $TBDEV['mysql_user'], $TBDEV['mysql_pass'], $TBDEV['mysql_db'], 3306);
+    if (!is_object($TBDEV['DB']))
     {
 	  err('Please call back later');
     }
@@ -80,13 +80,7 @@ function benc_resp_raw($x)
 
     ob_end_flush();
     ob_end_clean();
-    if ( $_SERVER['HTTP_ACCEPT_ENCODING'] == 'gzip' )
-    {
-        header( "Content-Encoding: gzip" );
-        echo gzencode( $x, 9, FORCE_GZIP );
-    }
-    else
-        echo $x ;
+    echo $x ;
 }
 
 function benc($obj) {
