@@ -10,6 +10,9 @@ Upload to your www dir the entire folder, minus SQL, then signup a account and i
 
 # Chanes from 2010 Version.
 17/01/2019 - Changed TBDEV.NET to TBDEV.info.
+
 15/01/2019 - Cleaned up announce.php (added mysql.php) added ob_start() to start to trim extra shit that invalidates the output..
+
 15/01/2019 - Cleaned up download.php, added ob_start to trim the extra shit that invalidates the torrent file.
+
 15/01/2019 - inserted mysql.php to override original mysql functions to mysqli.
