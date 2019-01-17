@@ -8,7 +8,7 @@ Then to populate the database upload SQL/tb.sql and then the rest of them in any
 
 Upload to your www dir the entire folder, minus SQL, then signup a account and it will make you a sysop :)
 
-# Chanes from 2010 Version.
+# Changes from 2010 Version.
 17/01/2019 - Changed TBDEV.NET to TBDEV.info.
 
 15/01/2019 - Cleaned up announce.php (added mysql.php) added ob_start() to start to trim extra shit that invalidates the output..
