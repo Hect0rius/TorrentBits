@@ -15,4 +15,6 @@ Upload to your www dir the entire folder, minus SQL, then signup a account and i
 
 15/01/2019 - Cleaned up download.php, added ob_start to trim the extra shit that invalidates the torrent file.
 
+15/01/2019 - Fixed up browse.php, updated mysql_fetch_assoc's to remove MYSQL_NUM as this is not needed.
+
 15/01/2019 - inserted mysql.php to override original mysql functions to mysqli.
