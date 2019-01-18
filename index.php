@@ -29,13 +29,11 @@ loggedinorreturn();
     //$lang = ;
     
     $HTMLOUT = '';
-/*
 $a = @mysql_fetch_assoc(@mysql_query("SELECT id,username FROM users WHERE status='confirmed' ORDER BY id DESC LIMIT 1")) or die(mysql_error());
 if ($CURUSER)
   $latestuser = "<a href='userdetails.php?id=" . $a["id"] . "'>" . $a["username"] . "</a>";
 else
   $latestuser = $a['username'];
-*/
 
     $registered = number_format(get_row_count("users"));
     //$unverified = number_format(get_row_count("users", "WHERE status='pending'"));
@@ -58,7 +56,7 @@ else
 
 
     //stdhead();
-    //$HTMLOUT .= "<div class='roundedCorners'><font class='small''>Welcome to our newest member, <b>$latestuser</b>!</font></div>\n";
+    $HTMLOUT .= "<div class='roundedCorners'><font class='small''>Welcome to our newest member, <b>$latestuser</b>!</font></div>\n";
 
     $adminbutton = '';
     
@@ -120,20 +118,18 @@ else
     
       $HTMLOUT .= "</table>
       </div>";
-
-/*
+      $HTMLOUT .= "
 <h2>Server load</h2>
 <table width='100%' border='1' cellspacing='0' cellpadding='1'0><tr><td align=center>
-<table class=main border='0' width=402><tr><td style='padding: 0px; background-image: url("<?php echo $TBDEV['pic_base_url']?>loadbarbg.gif"); background-repeat: repeat-x'>
-<?php $percent = min(100, round(exec('ps ax | grep -c apache') / 256 * 100));
-if ($percent <= 70) $pic = "loadbargreen.gif";
-elseif ($percent <= 90) $pic = "loadbaryellow.gif";
+<table class=main border='0' width=402><tr><td style='padding: 0px; background-image: url(" . $TBDEV['pic_base_url'] . "loadbarbg.gif background-repeat: repeat-x'>";
+$Load = sys_getloadavg(); 
+if ((int)$Load[0] <= 70) $pic = "loadbargreen.gif";
+elseif ((int)$Load[0] <= 90) $pic = "loadbaryellow.gif";
 else $pic = "loadbarred.gif";
-$width = $percent * 4;
-print("<img height='1'5 width=$width src=\"{$TBDEV['pic_base_url']}{$pic}\" alt='$percent%'>"); ?>
+$width = (int)$Load[0] * 4;
+$HTMLOUT .= "<img height='1'5 width=$width src=\"{$TBDEV['pic_base_url']}{$pic}\" alt='$percent%'>
 </td></tr></table>
-</td></tr></table>
-*/
+</td></tr></table>";
 
     $HTMLOUT .= sprintf("<p><font class='small'>{$lang['foot_disclaimer']}</font></p>", $TBDEV['site_name']);
     

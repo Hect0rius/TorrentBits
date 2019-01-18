@@ -30,7 +30,7 @@ require_once "include/user_functions.php";
 
     $lang = array_merge( $lang, load_language('ad_forummanage') );
     
-    if( (get_user_class() < UC_MODERATOR) || ($CURUSER['id'] !== '1')) //sysop id check
+    if( (get_user_class() < UC_MODERATOR) || (get_user_class() != UC_SYSOP)) //sysop id check
     stderr("{$lang['stderr_error']}", "{$lang['text_permission']}");
 
     $mode = isset($_GET['mode']) ? $_GET['mode'] : ''; //if not goto default!

@@ -63,22 +63,22 @@ $lang = array(
       BitTorrent link site. [popups]</li>
     <li><a class='altlink' href='http://www.litezone.com/'>Link2U</a> -
       BitTorrent link site.</li>",
-'links_tbdev_header' => "<h2>Link to TBDev.net</h2",
+'links_tbdev_header' => "<h2>Link to TBDev.info</h2",
 'links_tbdev_body' => "Do you want a link to torrentbits on your homepage?<br />
     Copy the following and paste it into your homepage code.<br />
     <br />
     <font color='#004E98'>
     &lt;!-- TBDev Link --&gt;<br />
     <br />
-    &lt;a href='http://www.tbdev.net'&gt;<br />
-    &lt;img src='http://www.tbdev.net/pic/tbani22.gif' border='0' alt='TBDev - The best!'&gt;&lt;/a&gt;<br />
+    &lt;a href='http://tbdev.info'&gt;<br />
+    &lt;img src='http://tbdev.info/pic/tbani22.gif' border='0' alt='TBDev - The best!'&gt;&lt;/a&gt;<br />
     <br />
     &lt;!-- End of TBDev Link --&gt;</font><br />
     <br />
     <br />
     It will look like this:<br />
     <br />
-    <a href='http://www.tbdev.net/'>
+    <a href='http://tbdev.info/'>
     <img src='./pic/tbdev_btn_red.png' border='0' alt='TBDev - The best!' /></a>
     <br />"
 );

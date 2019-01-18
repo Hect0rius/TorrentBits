@@ -148,7 +148,7 @@ loggedinorreturn();
       $where = "WHERE $where";
 
     $res = mysql_query("SELECT COUNT(*) FROM torrents $where") or die(mysql_error());
-    $row = mysql_fetch_array($res,MYSQL_NUM);
+    $row = mysql_fetch_array($res);
     $count = $row[0];
 
     if (!$count && isset($cleansearchstr)) 
@@ -176,7 +176,7 @@ loggedinorreturn();
         if ($where != "")
           $where = "WHERE $where";
         $res = mysql_query("SELECT COUNT(*) FROM torrents $where");
-        $row = mysql_fetch_array($res,MYSQL_NUM);
+        $row = mysql_fetch_array($res);
         $count = $row[0];
       }
     }

@@ -133,9 +133,7 @@ $lang = array(
     <br />
     <b>Where can I get a copy of the source code?<a name='site4' id='site4'></a></b><br />
     <br />
-    Snapshots are available on the <a href='www.tbdev.net/index.php?app=downloads' class='altlink'>FTP</a>. Please note: We do not give any kind of support on the source code so please don't bug us about it. If it works, great, if not too bad. Use this software at your own risk!
-    <p>
-    Here is a nice tutorial on getting it all to work, written by one of our users: <a href='http://www.tbdev.net'>TBDEV.NET</a>. Note: This tutorial is not supported by TBDev. Please direct all comments on the tutorial to the author, <b>MrMister</b>.</p>",
+    You can grab a copy of the script from <a href=\"\">Github</a>, The readme will explain more :)",
 'faq_userinfo_body' => "<b>I registered an account but did not receive the confirmation e-mail!</b><a name='user1' id='user1'></a><br />
     <br />
     You can use <a class='altlink' href='delacct.php'>this form</a> to delete the account so you can re-register.

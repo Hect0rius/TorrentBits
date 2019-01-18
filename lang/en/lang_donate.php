@@ -3,7 +3,7 @@
 $lang = array(
 
 #Donate
-'donate_click' => "Click the PayPal button below if you wish to make a donation!",
+'donate_click' => "Click here to purchase",
 'donate_make' => "Make payments with PayPal - it's fast, free and secure!",
 'donate_donating' => "If you make use of this software, please consider donating to {$TBDEV['site_name']}. We don't ask for much, just a nominal payment to show your support.",
 'donate_thanks' => "Thank You For Using Our Software!",
