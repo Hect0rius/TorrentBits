@@ -65,7 +65,7 @@ loggedinorreturn();
         "---------------------------------------------------------------------\n".
         "{$TBDEV['site_name']}{$lang['email_gateway']}\n";
 
-      $success = mail($to, $subject, $message, "{$lang['email_from']}{$TBDEV['site_email']}");
+      $success = sendEmail($to, $subject, $message, "{$TBDEV['site_email']}");
 
       if ($success)
         stderr("{$lang['email_success']}", "{$lang['email_queued']}");

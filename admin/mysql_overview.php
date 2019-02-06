@@ -36,7 +36,7 @@ require_once "include/user_functions.php";
     { 
       $Do = ($_GET['Do'] === "T") ? sqlesc($_GET['Do']) : ""; //for later use!
       //Make sure the GET only has alpha letters and nothing else
-      if(!ereg('[^A-Za-z_]+', $_GET['table'])) 
+      if(!preg_match('[^A-Za-z_]+', $_GET['table']) == 1) 
       { 
         $Table = '`'.$_GET['table'].'`';//add backquotes to GET or we is doomed!
       }

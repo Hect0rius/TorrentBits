@@ -34,7 +34,10 @@ dbconn();
         <img src='pic/flag/uk.gif' style='margin-right: 10px' alt='' />
       </td>
       <td class='embedded'>
-        <p>{$lang['donate_donating']}</p>
+       <p>{$lang['donate_donating']}</p> 
+      </td>
+      <td class='embedded'>
+        
         <form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\">
         <input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\">
         <input type=\"hidden\" name=\"hosted_button_id\" value=\"KQXM3SW2RKKSS\">

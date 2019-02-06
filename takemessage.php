@@ -168,8 +168,8 @@ You can use the URL below to view the message (you may have to login).
 --
 {$TBDEV['site_name']}
 EOD;
-	    @mail($user["email"], "{$lang['takemessage_received']} " . $username . "!",
-	    	$body, "{$lang['takemessage_from']} {$TBDEV['site_email']}");
+	    @sendEmail($user["email"], "{$lang['takemessage_received']} " . $username . "!",
+	    	$body, "{$TBDEV['site_email']}");
 	    }
 	  }
 	  $delete = isset($_POST["delete"]) ? $_POST["delete"] : '';

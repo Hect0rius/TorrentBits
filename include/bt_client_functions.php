@@ -151,7 +151,7 @@ if(preg_match("/^BitTorrent\/3.4.2/", $httpagent, $matches)) return "Spoofing BT
 if(preg_match("/^Python/", $httpagent, $matches)) return "Spoofing BT Client"; # Spoofing BT Client
 return StdDecodePeerId(substr($peer_id,3,7),"Azureus");
 }
-if(ereg("Azureus", $peer_id)) return "Azureus 2.0.3.2";
+if(!is_bool(strpos("Azureus", $peer_id))) return "Azureus 2.0.3.2";
 # BitComet/BitLord/BitVampire/Modded FUTB BitComet
 if(substr($peer_id,0,4)=='exbc' || substr($peer_id,1,3)=='UTB'){
 if(substr($peer_id,0,4)=='FUTB') return DecodeVersionString(substr($peer_id,4,2),"BitComet Mod1");

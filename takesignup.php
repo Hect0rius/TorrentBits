@@ -163,7 +163,7 @@ function isproxy()
                         $lang['takesignup_email_body']);
 
     if($arr[0])
-      mail($email, "{$TBDEV['site_name']} {$lang['takesignup_confirm']}", $body, "{$lang['takesignup_from']} {$TBDEV['site_email']}");
+      sendEmail($email, "{$TBDEV['site_name']} {$lang['takesignup_confirm']}", $body, "{$TBDEV['site_email']}");
     else 
       logincookie($id, $wantpasshash);
 

@@ -19,7 +19,6 @@
 +------------------------------------------------
 */
 error_reporting(E_ALL);
-
 define('SQL_DEBUG', 2);
 
 /* Compare php version for date/time stuff etc! */
@@ -44,8 +43,14 @@ $TBDEV['time_date'] = '';
 // FYNNON FUCKWIT FRENCH RETARD
 $TBDEV['mysql_host'] = "localhost";
 $TBDEV['mysql_user'] = "root";
-$TBDEV['mysql_pass'] = "blank";
+$TBDEV['mysql_pass'] = "Blank";
 $TBDEV['mysql_db']   = "TBDev";
+
+// SMTP Mail Settings.
+$TBDEV['mail_host'] = "smtp.example.com";
+$TBDEV['mail_user'] = "user@email.net";
+$TBDEV['mail_pwd'] = "password";
+$TBDEV['mail_port'] = 8080;
 
 // Cookie setup
 $TBDEV['cookie_prefix']  = 'tbalpha_'; // This allows you to have multiple trackers, eg for demos, testing etc.
@@ -121,7 +126,7 @@ $TBDEV['char_set'] = 'UTF-8'; //also to be used site wide in meta tags
 if (ini_get('default_charset') != $TBDEV['char_set']) {
 ini_set('default_charset',$TBDEV['char_set']);
 }
-$TBDEV['msg_alert'] = 0; // saves a query when off
+$TBDEV['msg_alert'] = 1; // saves a query when off
 
 $TBDEV['autoclean_interval'] = 900;
 $TBDEV['sql_error_log'] = ROOT_PATH.'/logs/sql_err_'.date("M_D_Y").'.log';
@@ -142,6 +147,13 @@ define ('UC_UPLOADER', 3);
 define ('UC_MODERATOR', 4);
 define ('UC_ADMINISTRATOR', 5);
 define ('UC_SYSOP', 6);
+
+$TBDEV['donations'] = array(
+    '5' => array(
+        'upload' => ((1024 * 1024) * 1024) * 10,
+        'price' => '&euro;5'
+    ),
+);
 
 //Do not modify -- versioning system
 //This will help identify code for support issues at tbdev.net

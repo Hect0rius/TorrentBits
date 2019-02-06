@@ -18,6 +18,7 @@
 */
 require_once("include/config.php");
 require_once("include/mysql.php");
+require_once("include/mail.php");
 require_once("cleanup.php");
 
 
