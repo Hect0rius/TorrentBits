@@ -10,6 +10,7 @@ Upload to your www dir the entire folder, minus SQL, then signup a account and i
 
 # Changes from 2010 Version.
 06/02/2019 - Added mail.php to bittorrent for mail functions, including imports of PHP Mailer (include/Mail/), added needed config info to include/config.php and fixed varies bugs with the mail to new sendEmail function.
+
 17/01/2019 - Changed TBDEV.NET to TBDEV.info.
 
 15/01/2019 - Cleaned up announce.php (added mysql.php) added ob_start() to start to trim extra shit that invalidates the output..
