@@ -1,8 +1,11 @@
 # TBDev
-A Modern take on the original 2010 PHP version, updated to be more up to date.
+A Modern take on the original 2010 PHP version, updated to be prolong the script life...
 
 # Installation
-Firstly create a new database called TBDev, with mysql or mariadb, then correct the conifg.php and announce.php with database information.
+Firstly create a new database called TBDev, with mysql or mariadb, then correct the config.php and announce.php with database information.
+
+Next fill out your SMTP information in config.php, this will be used as a new method of mail functions within tbdev.
+I use Zoho.com, $12-$20 a year, still havent been charged for my second year yet and been with them 2 years haha.
 
 Then to populate the database upload SQL/tb.sql and then the rest of them in any old way aslong as tb.sql is first.
 
